@@ -17,6 +17,7 @@ angular.module('mainApp', [])
       // !!!!
       // remoteは参照そのものではなく、呼んだ瞬間のコピーっぽい
       const firstWindow = require('electron').remote.getGlobal('firstWindow');
+      // このように書けではなく、このような状態に持っていけってことですぞ
       firstWindow.webContents.send('message', 'message from main.');
     };
     $scope.sendMsgTo2ndWindow = function() {
